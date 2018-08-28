@@ -14,7 +14,7 @@ var Formula = {
             while (ent != null) {
                 var col = ent.getColumnValues();
                 var colVal = col.elementAt(colNo - 1);
-                if (!unique || !inArray(colVal, list)) {
+                if (!unique || !Formula.inArray(colVal, list)) {
                     list.push();
                 }
                 ent = col.getNextEntry(ent);
