@@ -1,13 +1,13 @@
 var Formula = {
     /* @param obj:String, viewName:String, key:any, colNo:int, unique:boolean */
-    DbColumn: function(obj, viewName, key, colNo, unique) {
+    DbColumn: function(obj, viewName, colNo, unique) {
         try {
             /* get the data source */
             var db = API.getDatabaseForObject(obj);
             /* get the view */
             var view = db.getView(viewName);
             /* get all documents by the key */
-            var col = view.getAllEntries(key, true);
+            var col = view.getAllEntries();
             /* build the return list */
             var list = [];
             var ent = col.getFirstEntry();
