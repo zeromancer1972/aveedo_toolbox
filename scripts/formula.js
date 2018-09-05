@@ -1,5 +1,5 @@
 var Formula = {
-    /* @param obj:String, viewName:String, key:any, colNo:int, unique:boolean */
+    /* @param obj:String, viewName:String, colNo:int, unique:boolean */
     DbColumn: function(obj, viewName, colNo, unique) {
         try {
             /* get the data source */
@@ -12,8 +12,8 @@ var Formula = {
             var list = [];
             var ent = col.getFirstEntry();
             while (ent != null) {
-                var col = ent.getColumnValues();
-                var colVal = col.elementAt(colNo - 1);
+                var cols = ent.getColumnValues();
+                var colVal = cols.elementAt(colNo - 1);
                 if (!unique || !Formula.inArray(colVal, list)) {
                     list.push();
                 }
